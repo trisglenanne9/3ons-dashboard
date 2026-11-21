@@ -1,0 +1,27 @@
+{
+  "asof_year": 2026,
+  "built_at": "2026-11-20 07:02",
+  "built_at_tz": "MYT (UTC+8)",
+  "total_ma_in_tax": 450,
+  "total_ma_in_audit": 249,
+  "tax_on_time": 0.9188,
+  "audit_on_time": 0.8714,
+  "tax_resign_refer_var": 139125.0,
+  "audit_resign_refer_var": 147250.0,
+  "tax_fee_ytd": 201650.0,
+  "audit_fee_ytd": 408500.0,
+  "quote_sbd": 345775.0,
+  "quote_sbd_audit": 261250.0,
+  "quote_sbd_tax": 62525.0,
+  "rows": {
+    "tax": 2056,
+    "audit": 560,
+    "tax_term": 330,
+    "aud_term": 46,
+    "acc_term": 330
+  },
+  "baserate_source": "live",
+  "onpoint_aud_source": "live",
+  "onpoint_tax_source": "live",
+  "onpoint_tax_latest": "2026-11-19 16:40:00"
+}
