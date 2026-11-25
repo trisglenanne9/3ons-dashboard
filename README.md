@@ -6,7 +6,7 @@ In use since June 2026 by the heads of Audit and Tax and their team managers.
 **3 Ons** is the firm's name for three questions asked of every job. **On Time**: did the audit draft go out within 45 days of the client's management accounts coming in, and the tax draft within 60? **On Budget**: did the fee cover the cost of the staff time booked to the job? **On Point**: did a reviewed job go through the firm's quality-review form? A fourth part tracks the clients who leave.
 
 <!-- video: drag docs/video/3ons-dashboard.webm into this spot in the github.com editor to get an inline player -->
-🎬 **[Watch the 2-minute explainer](docs/video/3ons-dashboard.webm)**: what changed from the Power BI report, where the data comes from, and what one press of Refresh does (made-up data)
+🎬 **[Watch the 1-minute explainer](docs/video/3ons-dashboard.webm)** (voice and captions): what changed from the Power BI report, where the data comes from, and what one press of Refresh does (made-up data)
 
 > **About the data:** every number, company and person on this page and in the demo is made up. The real dashboard runs on the firm's own data and is private.
 
