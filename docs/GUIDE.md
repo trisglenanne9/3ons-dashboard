@@ -4,7 +4,7 @@
 
 ## 1. Who uses it and for what
 
-[Who uses it] <!-- TODO: the roles that use it, e.g. "the heads of Audit and Tax and their team managers" -->. They use it to:
+The heads of Audit and Tax and their team managers use it to:
 
 - see how many audit and tax jobs are in this year, and what share is on time: audit drafts within **45 days** of the management accounts coming in, tax drafts within **60 days**;
 - find the late jobs, by team, job status and client category, down to the company;
@@ -18,7 +18,7 @@
 |---|---|
 | Every working day | The teams update their tax control workbooks and audit job logs as jobs move: status, dates, the weekly comment. Anyone can press **Refresh** to pull the latest in (usually 60 to 90 seconds). |
 | Overnight | The practice-management system's client export is renewed in SharePoint, and its job and timesheet exports are updated automatically too. The next refresh picks them up. |
-| [When the numbers are reviewed] <!-- TODO: the meeting or review this is used in, and how often --> | Start on the Job Tracker; go to Audit 45D and Tax 60D for the late jobs, the TBA tabs for the jobs that missed, then the Resignation Trackers. |
+| Every week, at the review of open jobs with each team manager | Start on the Job Tracker; go to Audit 45D and Tax 60D for the late jobs, the TBA tabs for the jobs that missed, then the Resignation Trackers. |
 | Every Friday | A new week starts. The Resignation Tracker opens on the week that ended the day before (Friday to Thursday). |
 | Every Saturday 00:00 | The dashboard refreshes itself, and a frozen copy of the whole thing is saved to SharePoint for the record. |
 | 1 January | The "this year" views move on to the new year, and the Resignation Tracker YTD starts again from 1 January. |

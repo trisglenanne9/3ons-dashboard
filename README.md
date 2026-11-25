@@ -1,12 +1,12 @@
 # 3 Ons Dashboard: are an accounting firm's audit and tax jobs on time, on budget and on point?
 
 An accounting and advisory firm in Malaysia uses it to decide which audit and tax jobs to chase before they miss their deadline, which finished jobs did not pay for the time spent on them, and how much fee lost to resigning clients still has to be won back. It replaced a Power BI report that needed a Power BI licence for everyone who opened it.
-In use since [month year] by [who uses it]. <!-- TODO: fill in the month and year it went live, and who uses it (roles, e.g. "the heads of Audit and Tax and their managers") -->
+In use since June 2026 by the heads of Audit and Tax and their team managers.
 
 **3 Ons** is the firm's name for three questions asked of every job. **On Time**: did the audit draft go out within 45 days of the client's management accounts coming in, and the tax draft within 60? **On Budget**: did the fee cover the cost of the staff time booked to the job? **On Point**: did a reviewed job go through the firm's quality-review form? A fourth part tracks the clients who leave.
 
 <!-- video: drag docs/video/3ons-dashboard.webm into this spot in the github.com editor to get an inline player -->
-🎬 **[Watch the 90-second walkthrough](docs/video/3ons-dashboard.webm)** (silent, made-up data)
+🎬 **[Watch the 2-minute explainer](docs/video/3ons-dashboard.webm)**: what changed from the Power BI report, where the data comes from, and what one press of Refresh does (made-up data)
 
 > **About the data:** every number, company and person on this page and in the demo is made up. The real dashboard runs on the firm's own data and is private.
 
@@ -15,6 +15,16 @@ In use since [month year] by [who uses it]. <!-- TODO: fill in the month and yea
 | 🖱️ **[Try the demo](https://trisglenanne9.github.io/3ons-dashboard/)** | the real dashboard with made-up data, in your browser, no login |
 | 📘 **[User guide](docs/GUIDE.md)** | every tab, chart, filter and definition |
 | 🛠️ **[Technical architecture](docs/ARCHITECTURE.md)** | the same design in developer detail |
+
+## Before and now
+
+| | Before: one Power BI report | Now: the 3 Ons dashboard |
+|---|---|---|
+| **Who can open it** | a Power BI licence for each viewer | anyone with a company sign-in, in any browser |
+| **How fresh** | as at the file's last refresh | Refresh rebuilds every figure from today's files in about a minute; a frozen copy is saved every Saturday |
+| **The rules** | hidden in Power Query steps, page filters, saved slicers and measures | written once in code, and matched to the old report before go-live |
+| **If a source breaks** | the old figures stay up, with no sign on the page | a warning names the file that failed or moved; the last good figures stay up |
+| **Where the data sits** | inside a 30 MB report file | the firm's own Azure: private storage, read links that expire after 15 minutes |
 
 ## The problem
 
@@ -77,6 +87,16 @@ flowchart LR
 | Another dashboard's data file | the value of new work referred in by staff this year | from that dashboard's private store | as fresh as that dashboard's own refresh |
 
 29 sources in all. Nothing is copied in by hand, and the only figures built into the engine are the cost rate per grade per year, taken from the old Power BI file.
+
+## What one press of Refresh does
+
+1. **Read.** Each file is fetched by its ID, and only the files IT granted can be reached. A file that was moved or renamed is still found, and the route used is logged.
+2. **Clean.** The old report's Power Query steps, ported one for one: about 20 status codes roll up into 4 status groups, and money like `1,234.56` or hours like `1:30` are read as numbers instead of being lost as text.
+3. **Combine.** Each job gets its invoice and its timesheet lines; the cost of a job is the hours booked × each person's grade rate for that year. Resignations are joined to each client's team and category.
+4. **Score the 3 Ons.** *On time*: draft within 45 days of the management accounts (audit) or 60 (tax). *On budget*: the fee covers the cost of the time, with a margin of at least 67%. *On point*: a quality-review submission exists.
+5. **Publish.** Six small files go to private storage, stamped with the build time. A run that fails changes nothing: the last good figures stay up, and the page says what went wrong.
+
+It takes about a minute, and then everyone sees the same new figures.
 
 ## How it stays right
 
@@ -155,14 +175,13 @@ All Microsoft, all inside the firm's own setup:
 
 | | |
 |---|---|
-| Used by | [who uses it] <!-- TODO: roles, as in the line at the top --> |
+| Used by | the heads of Audit and Tax and their team managers |
 | Tabs | 9, rebuilt from the old Power BI report |
 | Sources read | 29, never changed: 27 workbooks and exports, 1 SharePoint list, 1 file from another dashboard |
 | Refresh | on request (usually 60 to 90 seconds), and every Saturday before the weekly copy |
 | Accuracy at go-live | job status 100% and tax on-time bands 100% against the old report; audit on-time bands 91.99%, every gap explained |
 | Licences | no Power BI licences needed to view it |
-| Time saved | [time saved] <!-- TODO: impact, e.g. hours saved a week or licences no longer bought --> |
-| In use since | [month year] <!-- TODO: go-live month and year --> |
+| In use since | June 2026 |
 
 ## Made by
 
